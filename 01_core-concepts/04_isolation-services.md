@@ -12,21 +12,21 @@ In the same manner, you can deploy other services like File Transfer Protocol, D
 
 ```mermaid
 flowchart TD
-    subgraph CLIENT[Client Side]
+    subgraph CLIENT["[1] Client Side"]
         C1[Customers]
         C2[Customers]
         C3[Customers]
         C4[Customers]
     end
 
-    subgraph DATACENTER[Data Center]
-        WEB[Web Server<br/>Apache]
-        DB[Database<br/>MySQL]
-        CACHE[Cache Server]
-        FTP[FTP Server]
+    subgraph DATACENTER["[3] Data Center"]
+        WEB["Web Server<br/>Apache"]
+        DB["Database<br/>MySQL"]
+        CACHE["Cache Server"]
+        FTP["FTP Server"]
     end
 
-    DNS[DNS Server]
+    DNS["[2] DNS Server"]
 
     CLIENT -.->|DNS| DNS
     CLIENT -->|Requests| WEB

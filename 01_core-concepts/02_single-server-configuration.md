@@ -12,19 +12,17 @@ Small websites or applications may not need a dedicated server and can often be 
 
 ```mermaid
 flowchart LR
-    subgraph A[Client Side]
+    subgraph A["[1] Clients"]
         direction TB
-        C1[Customers]
-        C2[Customers]
-        C3[Customers]
-        C4[Customers]
+        C1[Customer]
+        C2[Customer]
+        C3[Customer]
+        C4[Customer]
     end
-    A -->|Very heavy traffic| S[Single Server]
-    A -.->|Light, UDP| D[DNS]
 
-    %% Styling
-    linkStyle 0 stroke:#000,stroke-width:4px;
-    linkStyle 1 stroke:#555,stroke-dasharray:6 6;
-    classDef box fill:#fff,stroke:#000,stroke-width:1px,rx:6,ry:6;
-    class A,S,D box;
+    A -.->|Light UDP| D["[2] DNS"]
+    A -->|Heavy HTTP| S["[3] Server"]
+
+    linkStyle 0 stroke:#555,stroke-dasharray:6 6;
+    linkStyle 1 stroke:#000,stroke-width:4px;
 ```

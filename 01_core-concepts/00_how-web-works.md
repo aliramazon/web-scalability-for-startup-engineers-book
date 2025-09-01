@@ -28,12 +28,12 @@ sequenceDiagram
     participant D as DNS Server
     participant W as Web Server
 
-    U->>B: 1. Types "example.com"
-    B->>D: 2. DNS Query: "What's the IP for example.com?"
-    D->>B: 3. DNS Response: "IP is 93.184.216.34"
-    B->>W: 4. HTTP Request: "GET /index.html"
-    W->>B: 5. HTTP Response: "Here's the webpage"
-    B->>U: 6. Displays webpage
+    U->>B: [1] Types "example.com"
+    B->>D: [2] DNS Query: "What's the IP for example.com?"
+    D->>B: [3] DNS Response: "IP is 93.184.216.34"
+    B->>W: [4] HTTP Request: "GET /index.html"
+    W->>B: [5] HTTP Response: "Here's the webpage"
+    B->>U: [6] Displays webpage
 
     Note over B,W: Client-Server Communication
     Note over D: DNS translates domain to IP
